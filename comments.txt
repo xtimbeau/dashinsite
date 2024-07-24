@@ -1,0 +1,92 @@
+Building a website with a dashboard functions well
+
+`_quarto.yml:`
+````yml
+project:
+  type: website
+
+website:
+  title: "test"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: dashboard.qmd
+        text: Dashboard
+      - about.qmd
+
+format:
+  html: 
+    theme: cosmo
+````
+
+`index.qmd`
+````qmd
+---
+title: "test"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```
+````
+
+`dashboard.qmd`
+````qmd
+---
+format:
+  dashboard: default
+---
+## Row
+::: {.valuebox title="title" color="green"}
+42
+:::
+
+::: {.valuebox title="title" color="orange"}
+76
+:::
+````
+
+a random `about.qmd`
+
+But if I use an extension, in 
+
+`_extension/ext/ext/_extension.yml` with a scss file setting some elements (as a matter of fact it is not needed)
+````yml
+title: myext
+author: me
+version: 0.1.0
+quarto-required: ">=1.6.3"
+contributes:
+  formats:
+    html:
+      theme: 
+        - cosmo
+        - myscss.scss
+      mainfont: Open Sans
+      toc-location: left
+      lightbox: true
+      title-block-style: default
+````
+
+and then use the folowing `_quarto.yml`, then the styling works everywhere except on the dashboard
+````yml
+project:
+  type: website
+website:
+  title: "test"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: dashboard.qmd
+        text: Dashboard
+      - about.qmd
+format:
+  ext-html: 
+    theme: cosmo
+````

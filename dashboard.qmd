@@ -1,0 +1,12 @@
+---
+format:
+  dashboard: default
+---
+## Row
+::: {.valuebox title="title" color="green"}
+42
+:::
+
+::: {.valuebox title="title" color="orange"}
+76
+:::

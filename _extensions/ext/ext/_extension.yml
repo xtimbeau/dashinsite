@@ -1,0 +1,25 @@
+title: ext
+author: me
+version: 1.6.1
+quarto-required: ">=1.6.1"
+contributes:
+  formats:
+    html:
+      theme: 
+        - cosmo
+        - ext.scss
+      mainfont: Open Sans
+      toc-location: left
+      toc-title: Sur cette page
+      number-sections: true
+      number-depth: 3
+      reference-location: margin
+      logo: ofce_m.png
+      callout-icon: false
+      lightbox: true
+      title-block-style: default
+    dashboard:
+      theme:
+        - cosmo
+        - ext.scss
+      mainfont: Open Sans
